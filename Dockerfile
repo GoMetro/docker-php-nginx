@@ -54,6 +54,9 @@ USER nobody
 # Add application
 COPY --chown=nobody src/ /var/www/html/
 
+# Copy Composer
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+
 # Expose the port nginx is reachable on
 EXPOSE 8080
 
